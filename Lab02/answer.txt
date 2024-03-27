@@ -1,0 +1,2 @@
+- Question : If you create a constructor method to build a DVD by title then create a constructor method to build a DVD by category. Does JAVA allow you to do this?
+-> Answer: We can not create that constructor cause 2 method has same name and same data type of the argument
