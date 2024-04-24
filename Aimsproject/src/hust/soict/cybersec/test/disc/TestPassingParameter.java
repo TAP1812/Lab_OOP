@@ -1,4 +1,6 @@
-package AimsProject;
+package hust.soict.cybersec.test.disc;
+
+import hust.soict.cybersec.aims.disc.DigitalVideoDisc;
 
 public class TestPassingParameter {
 

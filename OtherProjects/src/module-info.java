@@ -4,5 +4,5 @@
 /**
  * 
  */
-module AimsProject {
+module OtherProjects {
 }

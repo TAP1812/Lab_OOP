@@ -1,4 +1,7 @@
-package AimsProject;
+package hust.soict.cybersec.aims.cart;
+
+import hust.soict.cybersec.aims.disc.DigitalVideoDisc;
+
 public class Cart {
 	public static final int MAX_NUMBERS_ORDERED = 20;
 	
@@ -33,25 +36,19 @@ public class Cart {
         }
         System.out.println("The disc was not found in the cart.");
     }
-    // Overloading method addDigitalVideoDisc
-//    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList) {
-//    	for(int i = 0; i < dvdList.length; i++) {
-//    		this.addDigitalVideoDisc(dvdList[i]);
-//    	}
-//    }
-    // Can't overload the method 
+ 
     public void addDigitalVideoDisc(DigitalVideoDisc...dvdList ) {
     	for(int i = 0; i < dvdList.length; i++) {
     		this.addDigitalVideoDisc(dvdList[i]);
     	}
     }
-    // Overloading addDigitalVideoDisc
+
     public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
     	this.addDigitalVideoDisc(dvd1);
     	this.addDigitalVideoDisc(dvd2);
     }
     
-    public float totalCost() {
+    public float getTotalCost() {
         float total = 0.0f;
         for (int i = 0; i < qtyOrdered; i++) {
             total += itemsOrdered[i].getCost();
@@ -59,15 +56,19 @@ public class Cart {
         return total;
     }
     
-    public void displayCartItems() {
-    	for (int i = 1; i <= qtyOrdered; i++) {
-    		String format = Integer.toString(itemsOrdered[i-1].getId()) + "        " + itemsOrdered[i-1].getTitle();System.out.print(format);
-    		for(int j = 0; j < 35-format.length(); j++) {
-    			System.out.print(" ");
-    		}
-    		System.out.printf("%.2f\n", itemsOrdered[i-1].getCost());
+    public String toString() {
+    	String ans = "Orderd Items: \n";
+    	for(int i=0;i<qtyOrdered;i++) {
+    		ans += (Integer.toString(i + 1) + ".DVD - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + 
+    				" - " + itemsOrdered[i].getDirector() + " - " + Integer.toString(itemsOrdered[i].getLength()) + ": " +
+    				Float.toString(itemsOrdered[i].getCost()) + " $\n"
+    				);
     	}
-    	System.out.printf("         Total Cost:               %.2f\n", this.totalCost());
+    	ans += ("Total cost: " + Float.toString(this.getTotalCost()));
+    	return ans;
+    }
+    public void searchById(int id) {
+    	
     }
 }
 	

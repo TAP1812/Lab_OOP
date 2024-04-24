@@ -1,4 +1,8 @@
-package AimsProject;
+package hust.soict.cybersec.aims;
+
+import hust.soict.cybersec.aims.cart.Cart;
+import hust.soict.cybersec.aims.disc.DigitalVideoDisc;
+
 public class Aims {
 
 	public static void main(String[] args) {
@@ -16,12 +20,12 @@ public class Aims {
 		System.out.println("---------------------------");
 		
 		// Display all items
-		anOrder.displayCartItems();
+		System.out.println(anOrder.toString());
 		
 		// Remove some dvd
 		anOrder.removeDigitalVideoDisc(dvd3);
 		System.out.println("---------------------------");
-		anOrder.displayCartItems();
+		System.out.println(anOrder.toString());
 	}
 
 }

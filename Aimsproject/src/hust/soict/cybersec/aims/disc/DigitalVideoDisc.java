@@ -1,6 +1,14 @@
-package AimsProject;
-public class DigitalVideoDisc {
+package hust.soict.cybersec.aims.disc;
 
+public class DigitalVideoDisc{
+	private String title;
+	private String category;
+	private String director;
+	private int length;
+	private float cost;
+	private static int nbDigitalVideoDiscs = 0;
+	private int id;
+	
 	public DigitalVideoDisc(String title, String category, float cost) {
 		super();
 		this.nbDigitalVideoDiscs ++;
@@ -20,7 +28,9 @@ public class DigitalVideoDisc {
 		this.length = length;
 		this.cost = cost;
 	}
-	
+	public boolean isMatch(String title) {
+		return this.title == title;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -36,16 +46,6 @@ public class DigitalVideoDisc {
 	public float getCost() {
 		return cost;
 	}
-	private String title;
-	private String category;
-	private String director;
-	private int length;
-	private float cost;
-	
-	private static int nbDigitalVideoDiscs = 0;
-	private int id;
-	
-	
 	public int getId() {
 		return this.id;
 	}
@@ -57,8 +57,4 @@ public class DigitalVideoDisc {
 		super();
 		this.title = title;
 	}
-
-	
-	
-	
 }
