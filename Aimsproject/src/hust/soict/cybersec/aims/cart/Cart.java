@@ -22,6 +22,17 @@ public class Cart {
         }
     }
     
+    public void addDigitalVideoDisc(DigitalVideoDisc[] dvdList ) {
+    	for(int i = 0; i < dvdList.length; i++) {
+    		this.addDigitalVideoDisc(dvdList[i]);
+    	}
+    }
+    
+    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
+    	this.addDigitalVideoDisc(dvd1);
+    	this.addDigitalVideoDisc(dvd2);
+    }
+    
     public void removeDigitalVideoDisc(DigitalVideoDisc disc) {
         for (int i = 0; i < qtyOrdered; i++) {
             if (itemsOrdered[i].equals(disc)) {
@@ -35,17 +46,6 @@ public class Cart {
             }
         }
         System.out.println("The disc was not found in the cart.");
-    }
- 
-    public void addDigitalVideoDisc(DigitalVideoDisc...dvdList ) {
-    	for(int i = 0; i < dvdList.length; i++) {
-    		this.addDigitalVideoDisc(dvdList[i]);
-    	}
-    }
-
-    public void addDigitalVideoDisc(DigitalVideoDisc dvd1, DigitalVideoDisc dvd2) {
-    	this.addDigitalVideoDisc(dvd1);
-    	this.addDigitalVideoDisc(dvd2);
     }
     
     public float getTotalCost() {
@@ -66,9 +66,6 @@ public class Cart {
     	}
     	ans += ("Total cost: " + Float.toString(this.getTotalCost()));
     	return ans;
-    }
-    public void searchById(int id) {
-    	
     }
 }
 	
