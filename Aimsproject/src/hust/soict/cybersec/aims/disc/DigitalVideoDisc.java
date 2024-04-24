@@ -63,4 +63,12 @@ public class DigitalVideoDisc{
 				Float.toString(this.cost) + " $\n"
 				);
 	}
+	public boolean equals(Object obj) {
+		if (obj instanceof DigitalVideoDisc) {
+			return this.isMatch(((DigitalVideoDisc) obj).getTitle());
+		}
+		else {
+			return false;
+		}
+	}
 }
