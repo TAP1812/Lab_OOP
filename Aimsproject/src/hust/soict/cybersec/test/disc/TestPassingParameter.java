@@ -18,9 +18,14 @@ public class TestPassingParameter {
 		
 	}
 	public static void swap(Object obj1, Object obj2) {
-		Object temp = obj1;
-		obj1 = obj2;
-		obj2 = temp;
+		if (obj1 instanceof DigitalVideoDisc) {
+			String temp = ((DigitalVideoDisc) obj1).getTitle();
+			((DigitalVideoDisc) obj1).setTitle(((DigitalVideoDisc) obj2).getTitle());
+			((DigitalVideoDisc) obj2).setTitle(temp);
+		}
+		else {
+			System.out.println("Error!");
+		}
 	}
 	public static void changeTitle(DigitalVideoDisc dvd, String title) {
 		String oldTitle = dvd.getTitle();
