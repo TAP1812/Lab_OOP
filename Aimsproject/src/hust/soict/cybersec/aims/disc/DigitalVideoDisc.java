@@ -57,4 +57,10 @@ public class DigitalVideoDisc{
 		super();
 		this.title = title;
 	}
+	public String toString() {
+		return (Integer.toString(this.id) + ".DVD - " + this.title + " - " + this.category + 
+				" - " + this.director + " - " + Integer.toString(this.length) + ": " +
+				Float.toString(this.cost) + " $\n"
+				);
+	}
 }

@@ -56,16 +56,35 @@ public class Cart {
         return total;
     }
     
-    public String toString() {
+    public String print() {
     	String ans = "Orderd Items: \n";
     	for(int i=0;i<qtyOrdered;i++) {
-    		ans += (Integer.toString(i + 1) + ".DVD - " + itemsOrdered[i].getTitle() + " - " + itemsOrdered[i].getCategory() + 
-    				" - " + itemsOrdered[i].getDirector() + " - " + Integer.toString(itemsOrdered[i].getLength()) + ": " +
-    				Float.toString(itemsOrdered[i].getCost()) + " $\n"
-    				);
+    		ans += itemsOrdered[i].toString();
     	}
     	ans += ("Total cost: " + Float.toString(this.getTotalCost()));
     	return ans;
+    }
+    
+    public void searchById(int id) {
+    	for(int i=0;i<qtyOrdered;i++) {
+    		if (itemsOrdered[i].getId() == id) {
+    			System.out.println("FOUND!!!");
+    			System.out.println(itemsOrdered[i].toString());
+    			return;
+    		}
+    	}
+    	System.out.println("NOT FOUND!!!!!");
+    }
+    
+    public void searchByTitle(String title) {
+    	for(int i=0;i<qtyOrdered;i++) {
+    		if (itemsOrdered[i].isMatch(title)) {
+    			System.out.println("FOUND!!!");
+    			System.out.println(itemsOrdered[i].toString());
+    			return;
+    		}
+    	}
+    	System.out.println("NOT FOUND!!!!!");
     }
 }
 	
