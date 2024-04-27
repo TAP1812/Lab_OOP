@@ -1,0 +1,19 @@
+1. Compare varargs and arrays
+- Similarities:
++ Represent collections of elements of the same data type
+- Differences:
+	Array			Varargs
++ Fixed size		+ Not fixed size
++ Must create array	+ Directly pass parameters
+
+In this case I prefer varargs to array because it is flexible. I have't to create a array of DVDs before calling addDigitalVideoDisc.
+
+2.Q: Is Java a pass by value or a pass by reference programming language?
+A: Java is considered a pass by value language. Java creates a copy of that reference and sends it to the method. This means any modifications within the method happen on the copied reference, not directly on the original object.
+
+Q: After the call of swap(jungleDVD, cinderellaDVD) why does the title of these two objects still remain?
+A: Because Java create a copy for each DVD and method swap only swap two copies.
+
+Q: After the call of changeTitle(jungleDVD, cinderellaDVD.getTitle()) why is the title of the JungleDVD changed?
+
+A: Because the copy of jungleDVD points to disc jungleDVD. Changing title means change original object's title, so the title of jungleDVD is changed
